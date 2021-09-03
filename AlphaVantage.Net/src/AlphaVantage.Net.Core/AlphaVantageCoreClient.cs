@@ -21,7 +21,7 @@ namespace AlphaVantage.Net.Core
         [CanBeNull]
         private readonly TimeSpan? _timeout;
 
-        private static IHttpClient _client = new HttpClientWithRateLimit(new HttpClient(), 20, 10);
+        private static IHttpClient _client = new HttpClientWithRateLimit(new HttpClient(), 10, 10);
 
         public AlphaVantageCoreClient(IApiCallValidator apiCallValidator = null, TimeSpan? timeout = null)
         {

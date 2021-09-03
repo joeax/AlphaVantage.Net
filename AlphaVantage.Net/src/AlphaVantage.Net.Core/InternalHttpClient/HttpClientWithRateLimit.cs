@@ -32,16 +32,20 @@ namespace AlphaVantage.Net.Core.InternalHttpClient
             HttpResponseMessage response = null;
             _concurrentRequestsCounter.WaitOne();
             await WaitForRequestedMinimumInterval();
-            try
-            {
-                response = await _client.SendAsync(request);
-            }
-            catch
-            {
-                _concurrentRequestsCounter.Release();
-                throw;
-            }
-            return response;
+			try
+			{
+				response = await _client.SendAsync(request);
+			}
+			catch
+			{
+				//_concurrentRequestsCounter.Release();
+				throw;
+			}
+			finally
+			{
+				_concurrentRequestsCounter.Release();
+			}
+			return response;
         }
         private async Task WaitForRequestedMinimumInterval()
         {

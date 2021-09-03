@@ -14,13 +14,20 @@ namespace AlphaVantage.Net.Core
         TIME_SERIES_WEEKLY_ADJUSTED,
         TIME_SERIES_MONTHLY,
         TIME_SERIES_MONTHLY_ADJUSTED,
-        BATCH_STOCK_QUOTES,
-        
-        // Foreign Exchange (FX)
-        CURRENCY_EXCHANGE_RATE,
-        
-        // Digital & Crypto Currencies
-        DIGITAL_CURRENCY_INTRADAY,
+		GLOBAL_QUOTE,
+		SYMBOL_SEARCH,
+		[System.Obsolete]
+		BATCH_STOCK_QUOTES,
+
+		// Foreign Exchange (FX)
+		CURRENCY_EXCHANGE_RATE,
+		FX_INTRADAY,
+		FX_DAILY,
+		FX_WEEKLY,
+		FX_MONTHLY,
+
+		// Digital & Crypto Currencies
+		DIGITAL_CURRENCY_INTRADAY,
         DIGITAL_CURRENCY_DAILY,
         DIGITAL_CURRENCY_WEEKLY,
         DIGITAL_CURRENCY_MONTHLY,
@@ -34,6 +41,7 @@ namespace AlphaVantage.Net.Core
         TRIMA,
         KAMA,
         MAMA,
+		VWAP,
         T3,
         MACD,
         MACDEXT,
